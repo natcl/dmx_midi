@@ -8,7 +8,7 @@
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ -2.0, 398.0, 622.0, 538.0 ],
+		"rect" : [ 99.0, 112.0, 622.0, 538.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -32,12 +32,25 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"frgb" : 0.0,
+					"id" : "obj-7",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 26.0, 236.0, 248.0, 20.0 ],
+					"text" : "Convert int into 2x 7 bit MIDI messages"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"frgb" : 0.0,
 					"id" : "obj-10",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 192.0, 39.0, 20.0 ],
-					"presentation_rect" : [ 405.0, 184.0, 0.0, 0.0 ],
+					"patching_rect" : [ 26.0, 264.0, 39.0, 20.0 ],
 					"text" : "value"
 				}
 
@@ -51,7 +64,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 480.0, 192.0, 53.0, 20.0 ],
+					"patching_rect" : [ 480.0, 264.0, 53.0, 20.0 ],
 					"text" : "channel"
 				}
 
@@ -64,7 +77,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 133.0, 303.0, 49.0, 20.0 ],
+					"patching_rect" : [ 72.0, 363.0, 49.0, 20.0 ],
 					"text" : "midiout"
 				}
 
@@ -81,7 +94,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 478.0, 215.0, 50.0, 20.0 ]
+					"patching_rect" : [ 478.0, 287.0, 50.0, 20.0 ]
 				}
 
 			}
@@ -93,7 +106,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 291.0, 34.0, 20.0 ],
+					"patching_rect" : [ 26.0, 363.0, 34.0, 20.0 ],
 					"text" : "print"
 				}
 
@@ -110,7 +123,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 26.0, 215.0, 50.0, 20.0 ]
+					"patching_rect" : [ 26.0, 287.0, 50.0, 20.0 ]
 				}
 
 			}
@@ -123,7 +136,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 26.0, 254.0, 471.0, 20.0 ],
+					"patching_rect" : [ 26.0, 326.0, 471.0, 20.0 ],
 					"text" : "sxformat 240 / is $i1 & 127 / is ($i1 >> 7) & 127 / is $i2 & 127 / is ($i2 >> 7) & 127 / 247"
 				}
 
