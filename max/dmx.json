@@ -1,0 +1,39 @@
+{
+	"pattrstorage" : 	{
+		"name" : "dmx",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"data" : 				{
+					"dmx_channel::channel" : [ 1 ],
+					"dmx_channel::value" : [ 0 ],
+					"dmx_channel[1]::channel" : [ 2 ],
+					"dmx_channel[1]::value" : [ 0 ],
+					"dmx_channel[2]::channel" : [ 3 ],
+					"dmx_channel[2]::value" : [ 0 ],
+					"dmx_channel[3]::channel" : [ 4 ],
+					"dmx_channel[3]::value" : [ 0 ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"data" : 				{
+					"dmx_channel::channel" : [ 1 ],
+					"dmx_channel::value" : [ 255 ],
+					"dmx_channel[1]::channel" : [ 2 ],
+					"dmx_channel[1]::value" : [ 255 ],
+					"dmx_channel[2]::channel" : [ 3 ],
+					"dmx_channel[2]::value" : [ 255 ],
+					"dmx_channel[3]::channel" : [ 4 ],
+					"dmx_channel[3]::value" : [ 255 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}
