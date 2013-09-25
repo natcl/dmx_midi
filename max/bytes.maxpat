@@ -136,8 +136,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 26.0, 326.0, 471.0, 20.0 ],
-					"text" : "sxformat 240 / is $i1 & 127 / is ($i1 >> 7) & 127 / is $i2 & 127 / is ($i2 >> 7) & 127 / 247"
+					"patching_rect" : [ 26.0, 326.0, 495.0, 20.0 ],
+					"text" : "sxformat 240 127 / is $i1 & 127 / is ($i1 >> 7) & 127 / is $i2 & 127 / is ($i2 >> 7) & 127 / 247"
 				}
 
 			}
