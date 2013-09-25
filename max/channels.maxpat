@@ -51,7 +51,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 74.0, 362.0, 244.0, 20.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 4, 44, 358, 172 ],
+						"client_rect" : [ 4, 44, 600, 581 ],
 						"parameter_enable" : 0,
 						"storage_rect" : [ 766, 44, 1220, 302 ]
 					}
@@ -93,7 +93,7 @@
 					"id" : "obj-4",
 					"maxclass" : "bpatcher",
 					"name" : "dmx_channel.maxpat",
-					"numinlets" : 0,
+					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 219.0, 9.0, 68.0, 272.0 ],
 					"varname" : "dmx_channel[3]"
@@ -105,7 +105,7 @@
 					"id" : "obj-3",
 					"maxclass" : "bpatcher",
 					"name" : "dmx_channel.maxpat",
-					"numinlets" : 0,
+					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 151.0, 9.0, 68.0, 272.0 ],
 					"varname" : "dmx_channel[2]"
@@ -117,7 +117,7 @@
 					"id" : "obj-2",
 					"maxclass" : "bpatcher",
 					"name" : "dmx_channel.maxpat",
-					"numinlets" : 0,
+					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 83.0, 9.0, 68.0, 272.0 ],
 					"varname" : "dmx_channel[1]"
@@ -129,7 +129,7 @@
 					"id" : "obj-1",
 					"maxclass" : "bpatcher",
 					"name" : "dmx_channel.maxpat",
-					"numinlets" : 0,
+					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 15.0, 9.0, 68.0, 272.0 ],
 					"varname" : "dmx_channel"
@@ -147,6 +147,10 @@
 
 			}
  ],
+		"parameters" : 		{
+
+		}
+,
 		"dependency_cache" : [ 			{
 				"name" : "dmx_channel.maxpat",
 				"bootpath" : "/Users/Nat/Source/dmx_midi/max",
