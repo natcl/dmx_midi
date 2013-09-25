@@ -1,5 +1,7 @@
 #include <DmxSimple.h>
+#include "Timer.h"
 
+Timer t;
 char status_led = 13;
 
 void setup() {
@@ -9,9 +11,15 @@ void setup() {
   Serial.begin(115200);
 }
 
-void loop() {  
+void loop() {
+  
+  t.update();  
+  
   if (usbMIDI.read())
   {
+    // Blink LED when messages are received
+    t.pulse(status_led, 100, HIGH);
+    
     // If the message is sysex and starts with 127
     if (usbMIDI.getType() == 7 && usbMIDI.getSysExArray()[1] == 127)
     {
@@ -38,6 +46,4 @@ void loop() {
 int seven_to_fourteen(char byte_a, char byte_b) {
   return byte_a & 127 | byte_b << 7;
 }
-
-
 
