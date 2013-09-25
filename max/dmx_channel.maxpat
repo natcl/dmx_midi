@@ -8,7 +8,7 @@
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 702.0, 97.0, 464.0, 501.0 ],
+		"rect" : [ 442.0, 78.0, 464.0, 501.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -50,8 +50,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 389.0, 227.0, 74.0, 20.0 ],
-					"text" : "patcherargs",
+					"patching_rect" : [ 389.0, 227.0, 84.0, 20.0 ],
+					"text" : "patcherargs 1",
 					"varname" : "u231000125"
 				}
 
@@ -105,20 +105,6 @@
 ,
 					"text" : "pattr channel",
 					"varname" : "channel"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-3",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 493.0, 265.0, 60.0, 20.0 ],
-					"text" : "loadbang"
 				}
 
 			}
@@ -343,15 +329,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-22", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-3", 0 ]
 				}
 
 			}
