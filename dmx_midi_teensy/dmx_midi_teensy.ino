@@ -1,23 +1,26 @@
 #include <DmxSimple.h>
 
+char status_led = 13;
+
 void setup() {
+  pinMode(status_led, OUTPUT);
+  digitalWrite(status_led, HIGH);
   DmxSimple.usePin(3);
   Serial.begin(115200);
 }
 
-void loop() {
-  
-  //uint8_t (*sysex)[6];
+void loop() {  
   if (usbMIDI.read())
   {
-    if (usbMIDI.getType() == 7)
+    // If the message is sysex and starts with 127
+    if (usbMIDI.getType() == 7 && usbMIDI.getSysExArray()[1] == 127)
     {
-      char channel_a = usbMIDI.getSysExArray()[3];
-      char channel_b = usbMIDI.getSysExArray()[4];
+      char channel_a = usbMIDI.getSysExArray()[4];
+      char channel_b = usbMIDI.getSysExArray()[5];
       int channel = seven_to_fourteen(channel_a, channel_b);
       
-      char value_a = usbMIDI.getSysExArray()[1];
-      char value_b = usbMIDI.getSysExArray()[2];
+      char value_a = usbMIDI.getSysExArray()[2];
+      char value_b = usbMIDI.getSysExArray()[3];
       char value = seven_to_fourteen(value_a, value_b);
       
       DmxSimple.write(channel, value);
@@ -26,7 +29,7 @@ void loop() {
       Serial.println(channel, DEC);
       
       Serial.print("Value: ");
-      Serial.println(value, DEC);
+      Serial.println(value, DEC); 
     }
   }
 }
