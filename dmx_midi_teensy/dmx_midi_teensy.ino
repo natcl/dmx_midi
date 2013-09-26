@@ -18,7 +18,7 @@ void loop() {
   if (usbMIDI.read())
   {
     // Blink LED when messages are received
-    t.pulse(status_led, 100, HIGH);
+    t.pulseImmediate(status_led, 100, LOW);
     
     // If the message is sysex and starts with 127
     if (usbMIDI.getType() == 7 && usbMIDI.getSysExArray()[1] == 127)
