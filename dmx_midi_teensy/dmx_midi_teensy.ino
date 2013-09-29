@@ -2,7 +2,7 @@
 #include "Timer.h"
 
 Timer t;
-char status_led = 13;
+char status_led = 5;
 
 void setup() {
   pinMode(status_led, OUTPUT);
