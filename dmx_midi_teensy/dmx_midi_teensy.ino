@@ -7,7 +7,14 @@ char status_led = 5;
 void setup() {
   pinMode(status_led, OUTPUT);
   digitalWrite(status_led, HIGH);
+  
   DmxSimple.usePin(3);
+
+  usbMIDI.setHandleControlChange(OnControlChange);
+  usbMIDI.setHandleNoteOff(OnNoteOff);
+  usbMIDI.setHandleNoteOn(OnNoteOn);
+  usbMIDI.setHandleVelocityChange(OnVelocityChange);
+  
   Serial.begin(115200);
 }
 
@@ -31,6 +38,51 @@ void loop() {
       char value_b = usbMIDI.getSysExArray()[3];
       char value = seven_to_fourteen(value_a, value_b);
       
+      dmx_write(channel, value);
+    }
+  }
+}
+
+void OnControlChange(byte channel, byte control, byte value) {
+  midi_to_dmx(channel, control, value);
+}
+
+void OnNoteOn(byte channel, byte note, byte velocity) {
+  midi_to_dmx(channel, note, velocity);
+}
+
+void OnNoteOff(byte channel, byte note, byte velocity) {
+  midi_to_dmx(channel, note, 0);
+}
+
+void OnVelocityChange(byte channel, byte note, byte velocity) {
+  midi_to_dmx(channel, note, velocity);
+}
+
+void midi_to_dmx(byte channel, byte control, byte value){
+  int dmx_channel;
+  
+  if (channel >= 1 && channel <= 5) {
+    if (channel == 1)
+      dmx_channel = control;
+    if (channel == 2)
+      dmx_channel = control + 127;
+    if (channel == 3)
+      dmx_channel = control + 254;
+    if (channel == 4)
+      dmx_channel = control + 381;
+    if (channel == 5 && control <= 4)
+      dmx_channel = control + 508;
+    if (channel == 5 && control > 4) {
+      dmx_channel = 512;
+      return;
+    }
+
+    dmx_write(dmx_channel, byte(value / 127. * 255));
+  }
+}
+
+void dmx_write(int channel, byte value) {
       DmxSimple.write(channel, value);
       
       Serial.print("Channel: ");
@@ -38,8 +90,6 @@ void loop() {
       
       Serial.print("Value: ");
       Serial.println(value, DEC); 
-    }
-  }
 }
 
 // Converts two 7-bit bytes into a 14-bit int
