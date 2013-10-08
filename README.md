@@ -7,7 +7,7 @@ A MIDI to DMX converter box based on Teensy 3.
 ## Using Control Change messages
 
 MIDI channel = DMX channel offset  
-Controller number = DMX channel (1-127 * offset)
+Controller number = DMX channel (1-127 * offset)  
 Controller value = DMX value (scaled to 0-255)
 
 Controller numbers 1-127 on MIDI channel 1 = DMX channels 1 to 127  
