@@ -1,6 +1,6 @@
 # MIDI to DMX using the Teensy 3
 
-A MIDI to DMX converter box based on Teensy 3
+A MIDI to DMX converter box based on Teensy 3.
 
 ## Using Control Change messages
 
