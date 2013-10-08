@@ -2,6 +2,8 @@
 
 A MIDI to DMX converter box based on Teensy 3.
 
+![](http://farm8.staticflickr.com/7452/10159755314_773a3286d3_n.jpg)
+
 ## Using Control Change messages
 
 MIDI channel = DMX channel offset  
