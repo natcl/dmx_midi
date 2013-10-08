@@ -12,7 +12,7 @@ Controller numbers 1-127 on MIDI channel 1 = DMX channels 1 to 127
 Controller numbers 1-127 on MIDI channel 2 = DMX channels 128 to 254  
 Controller numbers 1-127 on MIDI channel 3 = DMX channels 255 to 381  
 Controller numbers 1-127 on MIDI channel 3 = DMX channels 382 to 508  
-Controller numbers 1-127 on MIDI channel 5 = DMX channels 509 to 512
+Controller numbers 1-4 on MIDI channel 5 = DMX channels 509 to 512
 
 ## Using Note messages
 
