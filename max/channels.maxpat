@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 6,
 			"minor" : 1,
-			"revision" : 3,
+			"revision" : 5,
 			"architecture" : "x86"
 		}
 ,
@@ -51,7 +51,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 74.0, 362.0, 244.0, 20.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 4, 44, 600, 581 ],
+						"client_rect" : [ 182, 75, 778, 612 ],
 						"parameter_enable" : 0,
 						"storage_rect" : [ 766, 44, 1220, 302 ]
 					}
@@ -147,10 +147,6 @@
 
 			}
  ],
-		"parameters" : 		{
-
-		}
-,
 		"dependency_cache" : [ 			{
 				"name" : "dmx_channel.maxpat",
 				"bootpath" : "/Users/Nat/Source/dmx_midi/max",
