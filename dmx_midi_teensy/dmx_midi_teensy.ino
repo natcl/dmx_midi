@@ -59,27 +59,73 @@ void OnVelocityChange(byte channel, byte note, byte velocity) {
   midi_to_dmx(channel, note, velocity);
 }
 
-void midi_to_dmx(byte channel, byte control, byte value){
-  int dmx_channel;
+void midi_to_dmx(byte midi_channel, byte dmx_channel, byte value)
+{  
   
-  if (channel >= 1 && channel <= 5) {
-    if (channel == 1)
-      dmx_channel = control;
-    if (channel == 2)
-      dmx_channel = control + 127;
-    if (channel == 3)
-      dmx_channel = control + 254;
-    if (channel == 4)
-      dmx_channel = control + 381;
-    if (channel == 5 && control <= 4)
-      dmx_channel = control + 508;
-    if (channel == 5 && control > 4) {
-      dmx_channel = 512;
-      return;
-    }
-
-    dmx_write(dmx_channel, byte(value / 127. * 255));
+  // 512 channels of DMX spread across 5 MIDI channels
+  if (midi_channel >= 1 && midi_channel <= 5) 
+  {
+    if (midi_channel == 1)
+      dmx_write(dmx_channel, byte(value / 127. * 255));
+    if (midi_channel == 2)
+      dmx_write(dmx_channel + 127, byte(value / 127. * 255));
+    if (midi_channel == 3)
+      dmx_write(dmx_channel + 254, byte(value / 127. * 255));
+    if (midi_channel == 4)
+      dmx_write(dmx_channel + 381, byte(value / 127. * 255));
+    if (midi_channel == 5 && dmx_channel <= 4)
+      dmx_write(dmx_channel + 508, byte(value / 127. * 255));
+    if (midi_channel == 5 && dmx_channel > 4)
+      dmx_write(512, byte(value / 127. * 255));
   }
+
+  // Extra mapping for Roue
+  if (midi_channel == 6) 
+  {
+    if (dmx_channel == 60)
+      dmx_write(1, byte(value / 127. * 255));
+    if (dmx_channel == 61)
+      dmx_write(2, byte(value / 127. * 255));
+    if (dmx_channel == 62)
+      dmx_write(3, byte(value / 127. * 255));
+  }
+  if (midi_channel == 7) 
+  {
+    if (dmx_channel == 60)
+      dmx_write(5, byte(value / 127. * 255));
+    if (dmx_channel == 61)
+      dmx_write(6, byte(value / 127. * 255));
+    if (dmx_channel == 62)
+      dmx_write(7, byte(value / 127. * 255));
+  }
+  if (midi_channel == 8) 
+  {
+    if (dmx_channel == 60)
+      dmx_write(9, byte(value / 127. * 255));
+    if (dmx_channel == 61)
+      dmx_write(10, byte(value / 127. * 255));
+    if (dmx_channel == 62)
+      dmx_write(11, byte(value / 127. * 255));
+  }
+  if (midi_channel == 9) 
+  {
+    if (dmx_channel == 60)
+      dmx_write(13, byte(value / 127. * 255));
+    if (dmx_channel == 61)
+      dmx_write(14, byte(value / 127. * 255));
+    if (dmx_channel == 62)
+      dmx_write(15, byte(value / 127. * 255));
+  }
+  if (midi_channel == 10) 
+  {
+    if (dmx_channel == 60)
+      dmx_write(17, byte(value / 127. * 255));
+    if (dmx_channel == 61)
+      dmx_write(18, byte(value / 127. * 255));
+    if (dmx_channel == 62)
+      dmx_write(19, byte(value / 127. * 255));
+  }
+
 }
 
 void dmx_write(int channel, byte value) {
