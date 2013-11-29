@@ -125,7 +125,15 @@ void midi_to_dmx(byte midi_channel, byte dmx_channel, byte value)
     if (dmx_channel == 62)
       dmx_write(19, byte(value / 127. * 255));
   }
-
+  if (midi_channel == 11) 
+  {
+    if (dmx_channel == 60)
+      dmx_write(21, byte(value / 127. * 255));
+    if (dmx_channel == 61)
+      dmx_write(22, byte(value / 127. * 255));
+    if (dmx_channel == 62)
+      dmx_write(23, byte(value / 127. * 255));
+  }
 }
 
 void dmx_write(int channel, byte value) {
