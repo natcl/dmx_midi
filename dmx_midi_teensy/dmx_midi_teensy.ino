@@ -83,7 +83,7 @@ void midi_to_dmx(byte midi_channel, byte dmx_channel, byte value)
   if (midi_channel >= 6 && midi_channel <= 16) 
   {
     if (dmx_channel == 60)
-      dmx_write( (midi_channel-5) * 4 - 3, byte(value / 127. * 255));
+      dmx_write( (midi_channel-5) * 4 - 3, byte(value + 128));
     if (dmx_channel == 61)
       dmx_write( (midi_channel-5) * 4 - 2, byte(value / 127. * 255));
     if (dmx_channel == 62)
