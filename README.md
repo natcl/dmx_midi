@@ -20,7 +20,7 @@ Controller numbers 1-4 on MIDI channel 5 = DMX channels 509 to 512
 
 MIDI channel = DMX channel offset  
 Note number = DMX channel (Starting at note 1)  
-Velocity value = DMX value (scaled to 0-512)
+Velocity value = DMX value (scaled to 0-255)
 
 (See above mapping for note number to dmx channel conversion)
 
