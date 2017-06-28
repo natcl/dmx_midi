@@ -1,4 +1,4 @@
-# MIDI to DMX using the Teensy 3.x
+# MIDI to DMX using the Teensy 3.x/LC
 
 A MIDI to DMX converter box based on Teensy 3.
 
