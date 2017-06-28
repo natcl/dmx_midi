@@ -44,3 +44,5 @@ To go the other way around we do:
 ```c
 number = (lsb & 127) | (msb <<7)
 ```
+
+Note: For Teensy 3.0 please use the non-buffered version.  The buffered version as been tested with Teensy LC and Teensy 3.2.
