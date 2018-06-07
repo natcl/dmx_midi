@@ -19,7 +19,7 @@ void setup()
   usbMIDI.setHandleNoteOff(OnNoteOff);
   usbMIDI.setHandleNoteOn(OnNoteOn);
   usbMIDI.setHandleVelocityChange(OnVelocityChange);
-  
+
   delay(100);
   serial3TXbuffersizeminus1 = Serial3.availableForWrite();
 
@@ -57,24 +57,24 @@ void setup()
 
 void loop()
 {
-  t.update();  
-  
+  t.update();
+
   if (usbMIDI.read())
   {
     // Blink LED when messages are received
     t.pulseImmediate(status_led, 100, LOW);
-    
+
     // If the message is sysex and starts with 127
-    if (usbMIDI.getType() == 7 && usbMIDI.getSysExArray()[1] == 127)
+    if (usbMIDI.getType() == usbMIDI.SystemExclusive && usbMIDI.getSysExArray()[1] == 127)
     {
       char channel_a = usbMIDI.getSysExArray()[4];
       char channel_b = usbMIDI.getSysExArray()[5];
       int channel = seven_to_fourteen(channel_a, channel_b);
-      
+
       char value_a = usbMIDI.getSysExArray()[2];
       char value_b = usbMIDI.getSysExArray()[3];
       char value = seven_to_fourteen(value_a, value_b);
-      
+
       DMXset(channel, value);
     }
   }
@@ -119,10 +119,10 @@ void OnVelocityChange(byte channel, byte note, byte velocity) {
 }
 
 void midi_to_dmx(byte midi_channel, byte dmx_channel, byte value)
-{  
-  
+{
+
   // 512 channels of DMX spread across 5 MIDI channels
-  if (midi_channel >= 1 && midi_channel <= 5) 
+  if (midi_channel >= 1 && midi_channel <= 5)
   {
     if (midi_channel == 1)
       DMXset(dmx_channel, byte(value / 127. * 255));
