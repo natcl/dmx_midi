@@ -1,5 +1,5 @@
 // Buffered DMX library with low channel counts for fast refresh rate, or high channel count without tying up the processor for a long period of time.
-#include "Timer.h"
+#include "src/Timer/Timer.h"
 Timer t;
 char status_led = 13;
 
